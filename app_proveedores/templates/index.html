@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores de la Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .proveedor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .proveedor-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+        }
+        .proveedor-card h2 {
+            color: #007bff;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .proveedor-card p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        .proveedor-card p strong {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nuestros Proveedores de BYD Arroyo Carlos</h1>
+    <div class="proveedor-container">
+        {% for proveedor in proveedores %}
+        <div class="proveedor-card">
+            <h2>{{ proveedor.nombre }}</h2>
+            <p><strong>Producto/Servicio:</strong> {{ proveedor.producto }}</p>
+            <p><strong>Contacto:</strong> {{ proveedor.contacto }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
